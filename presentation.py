@@ -39,7 +39,29 @@ vals = ['1', '2', '3', '4']
 nums_dict = dict(zip(keys, vals))
 print(nums_dict)
 
+# repeat values
 print('ha' * 4)
 
+# swap reference
+a = 1; b = 2
+a, b = b, a
+print('a = {}, b = {}'.format(a, b))
 
+# set values from numeric range and unpacking to a wildcard
+zero, one, *two = range(4)
+print('zero = {}, one = {}, two = {}'.format(zero, one, two))
 
+# removing items by position
+cheese = ['cheddar', 'stilton', 'blue cheese']
+popped_cheese = cheese.pop(1)
+print('popped cheese : {}, cheese : {}'.format(popped_cheese, cheese))
+
+# removing list items by content
+cheese = ['cheddar', 'stilton', 'blue cheese']
+cheese.remove('stilton')
+print(cheese)
+
+# sorting using key
+nums = ['323', '43', '46', '100', '4', '20']
+sorted_nums = sorted(nums, key=int)
+print(sorted_nums)
