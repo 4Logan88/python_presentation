@@ -33,4 +33,13 @@ print('currencies dictionary = {}'.format(currencies_dict))
 languages_dict = dict(uk='english', france='french')
 print('language dictionary = {}'.format(languages_dict))
 
+# using zip - returns an iterator of tuples
+keys = ['one', 'two', 'three', 'four']
+vals = ['1', '2', '3', '4']
+nums_dict = dict(zip(keys, vals))
+print(nums_dict)
+
+print('ha' * 4)
+
+
 
