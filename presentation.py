@@ -65,3 +65,32 @@ print(cheese)
 nums = ['323', '43', '46', '100', '4', '20']
 sorted_nums = sorted(nums, key=int)
 print(sorted_nums)
+
+# remove duplicates and items from list using set
+alphabet = ['a', 'b', 'c', 'd', 'b']
+removed = list(set(alphabet) - {'c'})
+print(removed)
+
+# more on sets
+a1 = {1, 5, 8, 7, 6, 1}
+a2 = {3, 6, 1, 4}
+print('each item that is in both sets: {}'.format(a1 & a2))
+print('all items in both sets: {}'.format(a1 | a2))
+print('items in a1 not in a2: {}'.format(a1 - a2))
+print('items that occur in one set only: {}'.format(a1 ^ a2))
+
+# using regex with groups
+import re
+my_life = 'I love to take a long nap over the weekend'
+m = re.search(r'(long|short).*(weekend|weekday)', my_life)
+print(m.groups())
+
+address = 'Whittington House, 19-30 Alfred Place, London. WC1E 7EA'
+postcode = re.search(r'([A-Z]{2}[0-9][A-Z]?[ ][0-9][A-Z]{2})', address)
+print('postcode : {}'.format(postcode.groups()[0]))
+
+# using regex with sub
+import re
+address = 'Whittington House, 19-30 Alfred Place, London. WC1E 7EA'
+change_postcode = re.sub(r'[A-Z]{2}[0-9][A-Z]?[ ][0-9][A-Z]{2}', 'HA7 4JA', address)
+print(change_postcode)
