@@ -133,6 +133,11 @@ print(sum(3, 4))
 sum = lambda x,y: x+y
 print(sum(3, 4))
 
+# use filter and lambda to get even number
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+new_list = list(filter(lambda x: (x%2 == 0), my_list))
+print(new_list)
+
 # list comprehensions
 squares = []
 for x in range(10):
