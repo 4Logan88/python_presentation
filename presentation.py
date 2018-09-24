@@ -94,3 +94,62 @@ import re
 address = 'Whittington House, 19-30 Alfred Place, London. WC1E 7EA'
 change_postcode = re.sub(r'[A-Z]{2}[0-9][A-Z]?[ ][0-9][A-Z]{2}', 'HA7 4JA', address)
 print(change_postcode)
+
+# read the entire file into a temporary list in-memory and then iterate through that
+file = open('country.txt').readlines()
+for line in file:
+    print(line)
+
+# use the file object iterator
+for line in open('country.txt'):
+    print(line)
+
+# function with default
+def myfunc(file, dir, user='root'):
+    print('{}/{}/{}'.format(file,dir,user))
+
+myfunc('one','two')
+
+# local variable
+result = 2
+def test1():
+    result = 5
+test1()
+print(result)
+
+# global variable
+result = 2
+def test2():
+    global result
+    result = 10
+test2()
+print(result)
+
+# simple lambda
+def sum(x, y):
+    return (x+y)
+print(sum(3, 4))
+
+sum = lambda x,y: x+y
+print(sum(3, 4))
+
+# list comprehensions
+squares = []
+for x in range(10):
+    squares.append(x**2)
+print(squares)
+
+squares = [x**2 for x in range(10)]
+print(squares)
+
+# deepcopy
+fruit = ['apple', 'banana', 'pear', 'orange']
+lunch = fruit
+fruit[1] = 'grape'
+print('fruit: {}, lunch: {}'.format(fruit, lunch))
+
+import copy
+fruit = ['apple', 'banana', 'pear', 'orange']
+dinner = copy.deepcopy(fruit)
+fruit[2] = 'mango'
+print('fruit: {}, dinner: {}'.format(fruit, dinner))
