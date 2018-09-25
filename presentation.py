@@ -168,5 +168,13 @@ class Person:
   def myfunc(self):
     print("Hello my name is " + self.name)
 
+  a = 2
+  __b = 3
+
 p1 = Person("Logan", 30)
 p1.myfunc()
+
+# inheritance and namespace mangling
+class Employee(Person):
+    print(Person.a)
+    print(Person._Person__b)
